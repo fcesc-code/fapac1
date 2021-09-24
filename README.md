@@ -51,6 +51,7 @@ The backend counterpart can be found at (tbd)
   | ---------- | -------- | ----- | --------- |
   | x.x% | x.x% | x.x% | x.x% |
 - [Sonarqube](https://www.sonarqube.org/): x bugs | x0 code smells | x vulnerabilities | x security hotspots | x% code duplication (excluding duplicated API file requested to separate deliverables) \
+- [GitHub codeQL](https://github.com/github/codeql): 0 security alerts [![CodeQL](https://github.com/fcesc-code/fapac1/actions/workflows/codeql-analysis.yml/badge.svg?branch=main)](https://github.com/fcesc-code/fapac1/actions/workflows/codeql-analysis.yml)
 
 ## Continuous delivery
 Automated testing in every pull request or merge to the main branch.
@@ -58,18 +59,18 @@ Automated code scanning to measure code quality, pull requests cannot be merged 
 Automated security alerts for the repository.
 
 ## Development server
-Run ng serve for a dev server. Navigate to http://localhost:4200/. The app will automatically reload if you change any of the source files.
-Alternatively, run npm start.
+Run _ng serve_ for a dev server. Navigate to http://localhost:4200/. The app will automatically reload if you change any of the source files.
+Alternatively, run _npm start_.
 
 ## Build
-Run ng build to build the project. The build artifacts will be stored in the dist/ directory. Use the -prod flag for a production build.
+Run _ng build_ to build the project. The build artifacts will be stored in the dist/ directory. Use the _-prod_ flag for a production build.
 
 ## Running unit tests
-Run ng test to execute the unit tests via Karma.
-Option npm run testAuto is given for GitHub Actions.
+Run _ng test_ to execute the unit tests via Karma.
+Option _npm run testAuto_ is given for GitHub Actions.
 
 ## Running end-to-end tests
-Run ng e2e to execute the end-to-end tests via Protractor. Before running the tests make sure you are serving the app via ng serve.
+Run _ng e2e_ to execute the end-to-end tests via Protractor. Before running the tests make sure you are serving the app via ng serve.
 
 ## Next steps
 1. Implement continuous deployment.

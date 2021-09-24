@@ -2,7 +2,7 @@
 
 ## Supported Versions
 
-The project is currently under development and is still in its version 0.0.0.
+The project is currently :construction: under development :construction: and is still in its version 0.0.0.
 
 | Version | Supported | Notes |
 | ------- | --------- | ----- |
@@ -11,10 +11,10 @@ The project is currently under development and is still in its version 0.0.0.
 ## Reporting a Vulnerability
 
 Since this is an open-source project for educational purposes, no support is granted. However, we are
-glad to hear feedback from any vulnerabilities or bugs in order to sharpen our coding skills.
+glad to hear feedback from any vulnerabilities or bugs in order to sharpen my coding skills.
 
 To report any vulnerability or bug :rotating_light:, just open an [issue](https://github.com/fcesc-code/fapac1/issues) or a pull request.
 
-Check quiz [project information](https://github.com/fcesc-code/fapac1#readme).
+Check [project information](https://github.com/fcesc-code/fapac1#readme) :open_book:.
 
 September 2021.
