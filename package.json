@@ -1,0 +1,36 @@
+{
+  "name": "fapac1",
+  "description": "Aprendiendo Angular para Frameworks Avanzado",
+  "version": "0.0.0",
+  "scripts": {
+    "ng": "ng",
+    "start": "ng serve -o",
+    "build": "ng build",
+    "test": "ng test",
+    "testAuto": "ng test --watch=false --browsers=ChromeHeadlessPuppeteer",
+    "lint": "ng lint",
+    "e2e": "ng e2e"
+  },
+  "private": true,
+  "dependencies": {
+  },
+  "devDependencies": {
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fcesc-code/fapac1.git"
+  },
+  "keywords": [
+    "UOC",
+    "Angular",
+    "Typescript"
+  ],
+  "author": {
+    "name": "Francesc Brugarolas"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/fcesc-code/fapac1/issues"
+  },
+  "homepage": "https://github.com/fcesc-code/fapac1#readme"
+}
