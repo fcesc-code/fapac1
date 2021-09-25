@@ -2,19 +2,11 @@
   "name": "fapac1",
   "description": "Aprendiendo Angular para Frameworks Avanzado",
   "version": "0.0.0",
-  "scripts": {
-    "ng": "ng",
-    "start": "ng serve -o",
-    "build": "ng build",
-    "test": "ng test",
-    "testAuto": "ng test --watch=false --browsers=ChromeHeadlessPuppeteer",
-    "lint": "ng lint",
-    "e2e": "ng e2e"
-  },
+  "scripts": {},
   "private": true,
   "dependencies": {
-  },
-  "devDependencies": {
+    "@angular/cli": "^12.2.7",
+    "axios": "^0.21.4"
   },
   "repository": {
     "type": "git",
