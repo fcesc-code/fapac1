@@ -6,7 +6,8 @@ The project is currently :construction: under development :construction: and is 
 
 | Version | Supported | Notes |
 | ------- | --------- | ----- |
-| 0.0.1   | :x:       | Support not started until release |
+| 0.0.1   | :x:       | Support not started until first release (*) |
+_* A decision on support has not yet been made._
 
 ## Reporting a Vulnerability
 
