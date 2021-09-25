@@ -1,15 +1,19 @@
-
 ## Purpose
+
 The aim of this PAC1 is to create a small site and complete basic exercises, as part of a University 
 [Web apps and sites development Master](https://estudis.uoc.edu/ca/masters-universitaris/desenvolupament-llocs-aplicacions-web/presentacio) 
 by [Universitat Oberta de Catalunya](http://uoc.edu). \
 Subject: Advanced Frameworks. September 2021.
 
-## Repo
+## Project 
+
+### Repo
+
 A Git repository can be found at https://github.com/fcesc-code/fapac1.git
 The backend counterpart can be found at (tbd)
 
-## Tech stack
+### Tech stack
+
 - [Angular](https://angular.io/) framework
 - [Angular CLI](https://angular.io/cli)
 - [RxJS](https://rxjs.dev/guide/overview) library for reactive programming with Angular
@@ -27,11 +31,21 @@ The backend counterpart can be found at (tbd)
 - [WSL](https://docs.microsoft.com/en-us/windows/wsl/about) Windows Subsystem for Linux (ubuntu 20)
 - [HTML](https://html.spec.whatwg.org/)
 - [YAML](https://yaml.org/) for GitHub actions
-- Paradigms: Object-Oriented, Reactive
 
-## Content
+### Content
 
 - [Pexels](https://www.pexels.com/)
+
+### Project
+
+- [Trello](https://trello.com/)
+- [kanban](https://en.wikipedia.org/wiki/Kanban)
+
+### Code
+
+- [SOLID Principles](https://en.wikipedia.org/wiki/SOLID)
+- [Reactive programming](https://en.wikipedia.org/wiki/Reactive_programming)
+- Common [Software Design patterns](https://en.wikipedia.org/wiki/Software_design_pattern)
 
 ## Releases
 
@@ -44,6 +58,7 @@ The backend counterpart can be found at (tbd)
 1. ✔️ Initial version
 
 ## Quality gate
+
 - [HTML Validator](https://jigsaw.w3.org/css-validator/): x errors | x warnings \
 - [CSS Validator](https://jigsaw.w3.org/css-validator/validator): x errors | x warnings \
 - [Karma](https://karma-runner.github.io/): xx/xx tests passed (branch not merged) | Coverage: \
@@ -54,29 +69,35 @@ The backend counterpart can be found at (tbd)
 - [GitHub codeQL](https://github.com/github/codeql): 0 security alerts [![CodeQL](https://github.com/fcesc-code/fapac1/actions/workflows/codeql-analysis.yml/badge.svg?branch=main)](https://github.com/fcesc-code/fapac1/actions/workflows/codeql-analysis.yml)
 
 ## Continuous delivery
+
 Automated testing in every pull request or merge to the main branch.
 Automated code scanning to measure code quality, pull requests cannot be merged if quality is not met.
 Automated security alerts for the repository.
 
-## Development server
-Run _ng serve_ for a dev server. Navigate to http://localhost:4200/. The app will automatically reload if you change any of the source files.
-Alternatively, run _npm start_.
+## Scripts
 
-## Build
-Run _ng build_ to build the project. The build artifacts will be stored in the dist/ directory. Use the _-prod_ flag for a production build.
+### Development server
 
-## Running unit tests
-Run _ng test_ to execute the unit tests via Karma.
-Option _npm run testAuto_ is given for GitHub Actions.
+Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Alternatively, run `npm start`.
 
-## Running end-to-end tests
-Run _ng e2e_ to execute the end-to-end tests via Protractor. Before running the tests make sure you are serving the app via ng serve.
+### Build
 
-## Next steps
-1. Implement continuous deployment.
+Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
 
-## Releases
-v0.0.1 Planned - 1st October 2021
+### Running unit tests
+
+Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Option `npm run testAuto` is provided for automated GitHub Actions.
+
+### Running end-to-end tests
+
+Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+
+### Code scaffolding
+
+Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
 
 ## Contributions
 
@@ -94,10 +115,12 @@ Please, keep it short, descriptive and concise :smiley:
 Check out the how to report a vulnerability in our supported versions in the [SECURITY](https://github.com/fcesc-code/fapac1/blob/main/SECURITY.md) :open_book:.
 
 ## Credits
+
 Assistant professor [Francesc Albuera Reverté](https://campus.uoc.edu/rb/PERFIL20/profile/429300?s=2209f6e4bc33018fa1c11ff4a5b0155bf3c80342c5afe2459e9234430545bfa178d24210c97bb72689d6c22d6b5c504c3c675f64bdd04cad4dc6254b9970d991).
 Wherever appropriate, credit is given to author as a comment in specific file.
 
 ## Author
+
 Francesc Brugarolas, [repo](https://github.com/fcesc-code/)\
 \
 Latest update: September 2021
