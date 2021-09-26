@@ -12,6 +12,8 @@
         aria-required="true"
         placeholder="Your name..."
         autocomplete="name"
+        minlength="2"
+        maxlength="30"
       />
       <span [hidden]="name.valid || name.pristine" style="color: red">
         Name required
@@ -28,6 +30,8 @@
         aria-required="true"
         placeholder="Your surname..."
         autocomplete="family-name"
+        minlength="2"
+        maxlength="30"
       />
       <span [hidden]="surname1.valid || surname1.pristine" style="color: red">
         First surname required
@@ -42,6 +46,8 @@
         #surname2="ngModel"
         placeholder="Second surname..."
         autocomplete="family-name"
+        minlength="2"
+        maxlength="30"
       />
     </div>
     <div>
@@ -86,6 +92,7 @@
         aria-required="true"
         placeholder="Your email..."
         autocomplete="email"
+        email="true"
       />
       <span [hidden]="email.valid || email.pristine" style="color: red">
         Email required
@@ -105,6 +112,22 @@
       />
       <span [hidden]="password.valid || password.pristine" style="color: red">
         Password required
+      </span>
+    </div>
+    <div>
+      <label for="confirmPassword">Confirm password: </label>
+      <input 
+        type="password"
+        name="confirmPassword"
+        [(ngModel)]="user.confirmPassword"
+        #confirmPassword="ngModel"
+        required
+        aria-required="true"
+        placeholder="Confirm password..."
+        autocomplete="new-password"
+      />
+      <span [hidden]="confirmPassword.valid || confirmPassword.pristine" style="color: red">
+        Passowrds do not match!
       </span>
     </div>
     <div>

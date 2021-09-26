@@ -6,4 +6,5 @@ export class userNew {
   dateOfBirth!: string;
   email!: string;
   password!: string;
+  confirmPassword!: string;
 }
