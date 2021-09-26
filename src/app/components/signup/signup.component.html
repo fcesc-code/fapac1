@@ -16,16 +16,16 @@
         maxlength="30"
       />
       <div
-        *ngIf="name.errors && name.touched"
+        *ngIf="name.errors && name.dirty"
         [ngClass]="'error'"
       >
-        <div *ngIf="name.errors.required">
+        <div *ngIf="name.errors?.required">
           Name required.
         </div>
-        <div *ngIf="name.errors.minlength">
+        <div *ngIf="name.errors?.minlength">
           Name must be at least 2 characters long.
         </div>
-        <div *ngIf="name.errors.maxlength">
+        <div *ngIf="name.errors?.maxlength">
           Name can be max 30 characters long.
         </div>
       </div>
@@ -45,16 +45,16 @@
         maxlength="30"
       />
       <div
-        *ngIf="surname1.errors && surname1.touched"
+        *ngIf="surname1.errors && surname1.dirty"
         [ngClass]="'error'"
       >
-        <div *ngIf="surname1.errors.required">
+        <div *ngIf="surname1.errors?.required">
           First surname required.
         </div>
-        <div *ngIf="surname1.errors.minlength">
+        <div *ngIf="surname1.errors?.minlength">
           First surname must be at least 2 characters long.
         </div>
-        <div *ngIf="surname1.errors.maxlength">
+        <div *ngIf="surname1.errors?.maxlength">
           First surname can be max 30 characters long.
         </div>
       </div>
@@ -86,13 +86,13 @@
         minlength="5"
       />
       <div
-        *ngIf="username.errors && username.touched"
+        *ngIf="username.errors && username.dirty"
         [ngClass]="'error'"
       >
-        <div *ngIf="username.errors.required">
+        <div *ngIf="username.errors?.required">
           Username required.
         </div>
-        <div *ngIf="username.errors.minlength">
+        <div *ngIf="username.errors?.minlength">
           Username must be at least 5 characters long.
         </div>
       </div>
@@ -109,10 +109,10 @@
         autocomplete="bday"
       />
       <div
-        *ngIf="dateOfBirth.errors && dateOfBirth.touched"
+        *ngIf="dateOfBirth.errors && dateOfBirth.dirty"
         [ngClass]="'error'"
       >
-        <div *ngIf="dateOfBirth.errors.required">
+        <div *ngIf="dateOfBirth.errors?.required">
           Date of birth required.
         </div>
       </div>
@@ -130,14 +130,9 @@
         autocomplete="email"
         email="true"
       />
-      <div
-        *ngIf="email.errors && email.touched"
-        [ngClass]="'error'"
-      >
-        <div *ngIf="email.errors.required">
-          Email required.
-        </div>
-      </div>
+      <span [hidden]="email.untouched || email.pristine || email.valid" style="color: red">
+        Incorrect mail format
+      </span>
     </div>
     <div>
       <label for="password">Password: </label>
@@ -152,10 +147,10 @@
         autocomplete="new-password"
       />
       <div
-        *ngIf="password.errors && password.touched"
+        *ngIf="password.errors && password.dirty"
         [ngClass]="'error'"
       >
-        <div *ngIf="password.errors.required">
+        <div *ngIf="password.errors?.required">
           Password required.
         </div>
       </div>
@@ -172,7 +167,7 @@
         placeholder="Confirm password..."
         autocomplete="new-password"
       />
-      <span [hidden]="confirmPassword.valid || confirmPassword.pristine" style="color: red">
+      <span [hidden]="password.value === confirmPassword.value" style="color: red">
         Passowrds do not match!
       </span>
     </div>
