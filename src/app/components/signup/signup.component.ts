@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { userNew } from 'src/app/models/user.new';
 
 @Component({
@@ -6,21 +7,22 @@ import { userNew } from 'src/app/models/user.new';
   templateUrl: './signup.component.html',
   styleUrls: ['./signup.component.sass']
 })
-export class SignupComponent implements OnInit {
+export class SignupComponent {
   user: userNew;
+  isValidForm: boolean;
 
   constructor() { 
     this.user = new userNew();
+    this.isValidForm = false;
   }
 
-  ngOnInit(): void {
+  checkSignup(form: NgForm): void {
+    this.isValidForm = Boolean(form.valid);
+    this.devPrintUserData(this.user);
   }
 
-  checkSignup(): void {
-    console.log(`User data -> 
-      Name: ${this.user.name}, 
-      Email: ${this.user.email}, 
-      Password: ${this.user.password}`
-    );
+  private devPrintUserData(someUser: userNew): void {
+    let userData = 'User data for dev purposes: \n';
+    console.table(someUser);
   }
 }
