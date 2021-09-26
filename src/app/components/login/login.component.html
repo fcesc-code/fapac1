@@ -1,1 +1,38 @@
-<p>login works!</p>
+<div>
+  <h1>Test Driven Forms App</h1>
+  <form #loginForm="ngForm" (ngSubmit)="checkLogin()">
+    <div>
+      <label for="email">Email: </label>
+      <input 
+        type="email"
+        name="email"
+        [(ngModel)]="user.email"
+        #email="ngModel"
+        required
+        placeholder="Your email..."
+      />
+      <span [hidden]="email.valid || email.pristine" style="color: red">
+        Email required
+      </span>
+    </div>
+    <div>
+      <label for="password">Password: </label>
+      <input 
+        type="password"
+        name="password"
+        [(ngModel)]="user.password"
+        #password="ngModel"
+        required
+        placeholder="Your password..."
+      />
+      <span [hidden]="password.valid || password.pristine" style="color: red">
+        Password required
+      </span>
+    </div>
+    <div>
+      <button type="submit" [disabled]="!loginForm.form.valid">
+        Login
+      </button>
+    </div>
+  </form>
+</div>
