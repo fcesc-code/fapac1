@@ -1,0 +1,116 @@
+<div>
+  <h1>Test Driven Forms App</h1>
+  <form #signupForm="ngForm" (ngSubmit)="checkSignup()">
+    <div>
+      <label for="name">Name: </label>
+      <input 
+        type="text"
+        name="name"
+        [(ngModel)]="user.name"
+        #name="ngModel"
+        required
+        aria-required="true"
+        placeholder="Your name..."
+        autocomplete="name"
+      />
+      <span [hidden]="name.valid || name.pristine" style="color: red">
+        Name required
+      </span>
+    </div>
+    <div>
+      <label for="surname1">First surname: </label>
+      <input 
+        type="text"
+        name="surname1"
+        [(ngModel)]="user.surname1"
+        #surname1="ngModel"
+        required
+        aria-required="true"
+        placeholder="Your surname..."
+        autocomplete="family-name"
+      />
+      <span [hidden]="surname1.valid || surname1.pristine" style="color: red">
+        First surname required
+      </span>
+    </div>
+    <div>
+      <label for="surname2">Second surname: </label>
+      <input 
+        type="text"
+        name="surname2"
+        [(ngModel)]="user.surname2"
+        #surname2="ngModel"
+        placeholder="Second surname..."
+        autocomplete="family-name"
+      />
+    </div>
+    <div>
+      <label for="username">Username: </label>
+      <input 
+        type="text"
+        name="username"
+        [(ngModel)]="user.username"
+        #username="ngModel"
+        required
+        aria-required="true"
+        placeholder="Your username..."
+        autocomplete="off"
+      />
+      <span [hidden]="username.valid || username.pristine" style="color: red">
+        Username required
+      </span>
+    </div>
+    <div>
+      <label for="dateOfBirth">Date of birth: </label>
+      <input 
+        type="date"
+        name="dateOfBirth"
+        [(ngModel)]="user.dateOfBirth"
+        #dateOfBirth="ngModel"
+        required
+        aria-required="true"
+        autocomplete="bday"
+      />
+      <span [hidden]="dateOfBirth.valid || dateOfBirth.pristine" style="color: red">
+        Date of birth required
+      </span>
+    </div>
+    <div>
+      <label for="email">Email: </label>
+      <input 
+        type="email"
+        name="email"
+        [(ngModel)]="user.email"
+        #email="ngModel"
+        required
+        aria-required="true"
+        placeholder="Your email..."
+        autocomplete="email"
+      />
+      <span [hidden]="email.valid || email.pristine" style="color: red">
+        Email required
+      </span>
+    </div>
+    <div>
+      <label for="password">Password: </label>
+      <input 
+        type="password"
+        name="password"
+        [(ngModel)]="user.password"
+        #password="ngModel"
+        required
+        aria-required="true"
+        placeholder="Your password..."
+        autocomplete="new-password"
+      />
+      <span [hidden]="password.valid || password.pristine" style="color: red">
+        Password required
+      </span>
+    </div>
+    <div>
+      <button type="submit" [disabled]="!signupForm.form.valid">
+        Login
+      </button>
+    </div>
+  </form>
+</div>
