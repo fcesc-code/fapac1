@@ -1,0 +1,180 @@
+<div>
+  <h1>Test Driven Forms App</h1>
+  <form #registerForm="ngForm" (ngSubmit)="checkRegister(registerForm)">
+    <div>
+      <label for="name">Name: </label>
+      <input 
+        type="text"
+        name="name"
+        [(ngModel)]="user.name"
+        #name="ngModel"
+        required
+        aria-required="true"
+        placeholder="Your name..."
+        autocomplete="name"
+        minlength="2"
+        maxlength="30"
+      />
+      <div
+        *ngIf="name.errors && name.dirty"
+        [ngClass]="'error'"
+      >
+        <div *ngIf="name.errors?.required">
+          Name required.
+        </div>
+        <div *ngIf="name.errors?.minlength">
+          Name must be at least 2 characters long.
+        </div>
+        <div *ngIf="name.errors?.maxlength">
+          Name can be max 30 characters long.
+        </div>
+      </div>
+    </div>
+    <div>
+      <label for="surname1">First surname: </label>
+      <input 
+        type="text"
+        name="surname1"
+        [(ngModel)]="user.surname1"
+        #surname1="ngModel"
+        required
+        aria-required="true"
+        placeholder="Your surname..."
+        autocomplete="family-name"
+        minlength="2"
+        maxlength="30"
+      />
+      <div
+        *ngIf="surname1.errors && surname1.dirty"
+        [ngClass]="'error'"
+      >
+        <div *ngIf="surname1.errors?.required">
+          First surname required.
+        </div>
+        <div *ngIf="surname1.errors?.minlength">
+          First surname must be at least 2 characters long.
+        </div>
+        <div *ngIf="surname1.errors?.maxlength">
+          First surname can be max 30 characters long.
+        </div>
+      </div>
+    </div>
+    <div>
+      <label for="surname2">Second surname: </label>
+      <input 
+        type="text"
+        name="surname2"
+        [(ngModel)]="user.surname2"
+        #surname2="ngModel"
+        placeholder="Second surname..."
+        autocomplete="family-name"
+        minlength="2"
+        maxlength="30"
+      />
+    </div>
+    <div>
+      <label for="username">Username: </label>
+      <input 
+        type="text"
+        name="username"
+        [(ngModel)]="user.username"
+        #username="ngModel"
+        required
+        aria-required="true"
+        placeholder="Your username..."
+        autocomplete="off"
+        minlength="5"
+      />
+      <div
+        *ngIf="username.errors && username.dirty"
+        [ngClass]="'error'"
+      >
+        <div *ngIf="username.errors?.required">
+          Username required.
+        </div>
+        <div *ngIf="username.errors?.minlength">
+          Username must be at least 5 characters long.
+        </div>
+      </div>
+    </div>
+    <div>
+      <label for="dateOfBirth">Date of birth: </label>
+      <input 
+        type="date"
+        name="dateOfBirth"
+        [(ngModel)]="user.dateOfBirth"
+        #dateOfBirth="ngModel"
+        required
+        aria-required="true"
+        autocomplete="bday"
+      />
+      <div
+        *ngIf="dateOfBirth.errors && dateOfBirth.dirty"
+        [ngClass]="'error'"
+      >
+        <div *ngIf="dateOfBirth.errors?.required">
+          Date of birth required.
+        </div>
+      </div>
+    </div>
+    <div>
+      <label for="email">Email: </label>
+      <input 
+        type="email"
+        name="email"
+        [(ngModel)]="user.email"
+        #email="ngModel"
+        required
+        aria-required="true"
+        placeholder="Your email..."
+        autocomplete="email"
+        email="true"
+      />
+      <span [hidden]="email.untouched || email.pristine || email.valid" style="color: red">
+        Incorrect mail format
+      </span>
+    </div>
+    <div>
+      <label for="password">Password: </label>
+      <input 
+        type="password"
+        name="password"
+        [(ngModel)]="user.password"
+        #password="ngModel"
+        required
+        aria-required="true"
+        placeholder="Your password..."
+        autocomplete="new-password"
+      />
+      <div
+        *ngIf="password.errors && password.dirty"
+        [ngClass]="'error'"
+      >
+        <div *ngIf="password.errors?.required">
+          Password required.
+        </div>
+      </div>
+    </div>
+    <div>
+      <label for="confirmPassword">Confirm password: </label>
+      <input 
+        type="password"
+        name="confirmPassword"
+        [(ngModel)]="user.confirmPassword"
+        #confirmPassword="ngModel"
+        required
+        aria-required="true"
+        placeholder="Confirm password..."
+        autocomplete="new-password"
+      />
+      <span [hidden]="password.value === confirmPassword.value" style="color: red">
+        Passowrds do not match!
+      </span>
+    </div>
+    <div>
+      <button type="submit">
+        Sign up
+      </button>
+    </div>
+  </form>
+</div>
