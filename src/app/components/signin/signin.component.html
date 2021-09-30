@@ -10,8 +10,12 @@
       />
       <div *ngIf="email.errors">
         <span *ngIf="email.invalid && email.dirty && email.errors?.required"
-          style="color: red">
+          class="error">
           Email required
+        </span>
+        <span *ngIf="email.invalid && email.dirty && email.errors?.reservedKeyword"
+          class="error">
+          This email domain is not allowed to acces through this page
         </span>
       </div>
     </div>
@@ -24,7 +28,7 @@
       />
       <div *ngIf="password.errors">
         <span *ngIf="password.invalid && password.dirty && password.errors?.required" 
-          style="color: red">
+          class="error">
           Password required
         </span>
       </div>
