@@ -8,9 +8,12 @@
         [formControl]="email"
         placeholder="Your email..."
       />
-      <span [hidden]="email.valid || email.pristine" style="color: red">
-        Email required
-      </span>
+      <div *ngIf="email.errors">
+        <span *ngIf="email.invalid && email.dirty && email.errors?.required"
+          style="color: red">
+          Email required
+        </span>
+      </div>
     </div>
     <div>
       <label for="password">Password: </label>
@@ -19,9 +22,12 @@
         [formControl]="password"
         placeholder="Your password..."
       />
-      <span [hidden]="password.valid || password.pristine" style="color: red">
-        Password required
-      </span>
+      <div *ngIf="password.errors">
+        <span *ngIf="password.invalid && password.dirty && password.errors?.required" 
+          style="color: red">
+          Password required
+        </span>
+      </div>
     </div>
     <div>
       <button type="submit" [disabled]="!signinForm.valid">
