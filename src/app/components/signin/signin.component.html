@@ -1,1 +1,32 @@
-<p>signin works!</p>
+<div>
+  <h1>Reactive signin form</h1>
+  <form [formGroup]="signinForm" (ngSubmit)="checkSignin()">
+    <div>
+      <label for="email">Email: </label>
+      <input 
+        type="email"
+        [formControl]="email"
+        placeholder="Your email..."
+      />
+      <span [hidden]="email.valid || email.pristine" style="color: red">
+        Email required
+      </span>
+    </div>
+    <div>
+      <label for="password">Password: </label>
+      <input 
+        type="password"
+        [formControl]="password"
+        placeholder="Your password..."
+      />
+      <span [hidden]="password.valid || password.pristine" style="color: red">
+        Password required
+      </span>
+    </div>
+    <div>
+      <button type="submit" [disabled]="!signinForm.valid">
+        Login
+      </button>
+    </div>
+  </form>
+</div>
