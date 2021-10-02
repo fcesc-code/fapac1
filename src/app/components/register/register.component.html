@@ -1,14 +1,19 @@
 <div class="fullSizeForm">
   <h1>Test Driven Forms App</h1>
-  <form [formGroup]="signupForm" (ngSubmit)="checkSignup()" aria-label="signup form">
+  <form #registerForm="ngForm" (ngSubmit)="checkRegister(registerForm)">
     <div class="formField">
       <label for="name">Name: </label>
       <input 
         type="text"
-        [formControl]="name"
+        name="name"
+        [(ngModel)]="user.name"
+        #name="ngModel"
+        required
         aria-required="true"
         placeholder="Your name..."
         autocomplete="name"
+        minlength="2"
+        maxlength="30"
       />
       <div
         *ngIf="name.errors && name.dirty"
@@ -29,10 +34,15 @@
       <label for="surname1">First surname: </label>
       <input 
         type="text"
-        [formControl]="surname1"
+        name="surname1"
+        [(ngModel)]="user.surname1"
+        #surname1="ngModel"
+        required
         aria-required="true"
         placeholder="Your surname..."
         autocomplete="family-name"
+        minlength="2"
+        maxlength="30"
       />
       <div
         *ngIf="surname1.errors && surname1.dirty"
@@ -53,16 +63,23 @@
       <label for="surname2">Second surname: </label>
       <input 
         type="text"
-        [formControl]="surname2"
+        name="surname2"
+        [(ngModel)]="user.surname2"
+        #surname2="ngModel"
         placeholder="Second surname..."
         autocomplete="family-name"
+        minlength="2"
+        maxlength="30"
       />
     </div>
     <div class="formField">
       <label for="username">Username: </label>
       <input 
         type="text"
-        [formControl]="username"
+        name="username"
+        [(ngModel)]="user.username"
+        #username="ngModel"
+        required
         aria-required="true"
         placeholder="Your username..."
         autocomplete="off"
@@ -84,7 +101,10 @@
       <label for="dateOfBirth">Date of birth: </label>
       <input 
         type="date"
-        [formControl]="dateOfBirth"
+        name="dateOfBirth"
+        [(ngModel)]="user.dateOfBirth"
+        #dateOfBirth="ngModel"
+        required
         aria-required="true"
         autocomplete="bday"
       />
@@ -101,10 +121,14 @@
       <label for="email">Email: </label>
       <input 
         type="email"
-        [formControl]="email"
+        name="email"
+        [(ngModel)]="user.email"
+        #email="ngModel"
+        required
         aria-required="true"
         placeholder="Your email..."
         autocomplete="email"
+        email="true"
       />
       <span [hidden]="email.untouched || email.pristine || email.valid" style="color: red">
         Incorrect mail format
@@ -114,7 +138,10 @@
       <label for="password">Password: </label>
       <input 
         type="password"
-        [formControl]="password"
+        name="password"
+        [(ngModel)]="user.password"
+        #password="ngModel"
+        required
         aria-required="true"
         placeholder="Your password..."
         autocomplete="new-password"
@@ -126,29 +153,16 @@
         <div *ngIf="password.errors?.required">
           Password required.
         </div>
-        <div *ngIf="password.errors?.minlength">
-          Password must have at least 6 characters.
-        </div>
-        <div *ngIf="password.errors?.hasNotNumbers">
-          Password must include at least 1 digit.
-        </div>
-        <div *ngIf="password.errors?.hasNotUpperCase">
-          Password must include at least 1 capital letter.
-        </div>
-        <div *ngIf="password.errors?.hasNotLowerCase">
-          Password must include at least 1 lowercase letter.
-        </div>
-        <div *ngIf="password.errors?.hasNotSpecialCharacter">
-          Password must include at least 1 of the following special characters: 
-          . : , ; / \ | ¡ ! ¿ ? + - * = % _ # ~ @ ^ &apos; &quot; ´ ` &#123; &#125; &#91; &#93; ( ) &lt; &gt; &amp; º ª € $ &#163; &#165;.
-        </div>
       </div>
     </div>
     <div class="formField">
       <label for="confirmPassword">Confirm password: </label>
       <input 
         type="password"
-        [formControl]="confirmPassword"
+        name="confirmPassword"
+        [(ngModel)]="user.confirmPassword"
+        #confirmPassword="ngModel"
+        required
         aria-required="true"
         placeholder="Confirm password..."
         autocomplete="new-password"
@@ -158,7 +172,7 @@
       </span>
     </div>
     <div>
-      <button type="submit" aria-label="send signup form">
+      <button type="submit">
         Sign up
       </button>
     </div>
