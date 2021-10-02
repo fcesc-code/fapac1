@@ -1,6 +1,6 @@
 <div>
   <h1>Test Driven Forms App</h1>
-  <form [formGroup]="signupForm" (ngSubmit)="checkSignup()">
+  <form [formGroup]="signupForm" (ngSubmit)="checkSignup()" aria-label="signup form">
     <div>
       <label for="name">Name: </label>
       <input 
@@ -9,8 +9,6 @@
         aria-required="true"
         placeholder="Your name..."
         autocomplete="name"
-        minlength="2"
-        maxlength="30"
       />
       <div
         *ngIf="name.errors && name.dirty"
@@ -35,8 +33,6 @@
         aria-required="true"
         placeholder="Your surname..."
         autocomplete="family-name"
-        minlength="2"
-        maxlength="30"
       />
       <div
         *ngIf="surname1.errors && surname1.dirty"
@@ -60,8 +56,6 @@
         [formControl]="surname2"
         placeholder="Second surname..."
         autocomplete="family-name"
-        minlength="2"
-        maxlength="30"
       />
     </div>
     <div>
@@ -111,7 +105,6 @@
         aria-required="true"
         placeholder="Your email..."
         autocomplete="email"
-        email="true"
       />
       <span [hidden]="email.untouched || email.pristine || email.valid" style="color: red">
         Incorrect mail format
@@ -133,6 +126,22 @@
         <div *ngIf="password.errors?.required">
           Password required.
         </div>
+        <div *ngIf="password.errors?.minlength">
+          Password must have at least 6 characters.
+        </div>
+        <div *ngIf="password.errors?.hasNotNumbers">
+          Password must include at least 1 digit.
+        </div>
+        <div *ngIf="password.errors?.hasNotUpperCase">
+          Password must include at least 1 capital letter.
+        </div>
+        <div *ngIf="password.errors?.hasNotLowerCase">
+          Password must include at least 1 lowercase letter.
+        </div>
+        <div *ngIf="password.errors?.hasNotSpecialCharacter">
+          Password must include at least 1 of the following special characters: 
+          . : , ; / \ | ¡ ! ¿ ? + - * = % _ # ~ @ ^ &apos; &quot; ´ ` &#123; &#125; &#91; &#93; ( ) &lt; &gt; &amp; º ª € $ &#163; &#165;.
+        </div>
       </div>
     </div>
     <div>
@@ -149,7 +158,7 @@
       </span>
     </div>
     <div>
-      <button type="submit">
+      <button type="submit" aria-label="send signup form">
         Sign up
       </button>
     </div>

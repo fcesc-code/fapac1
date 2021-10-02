@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { userNew } from 'src/app/models/user.new';
+import { ValidationService } from 'src/app/services/validation.service';
 
 @Component({
   selector: 'app-signup',
@@ -24,7 +25,10 @@ export class SignupComponent {
   password: FormControl;
   confirmPassword: FormControl;
 
-  constructor( private formbuilder: FormBuilder ) { 
+  constructor( 
+    private formbuilder: FormBuilder,
+    private customvalidation: ValidationService
+  ) { 
     this.user = new userNew();
 
     this.isValidForm = false;
@@ -60,7 +64,11 @@ export class SignupComponent {
     ] );
     this.password = new FormControl( this.user.password, [
       Validators.required,
-      Validators.minLength(6)
+      Validators.minLength(6),
+      this.customvalidation.hasNumbers(),
+      this.customvalidation.hasLowerCase(),
+      this.customvalidation.hasUpperCase(),
+      this.customvalidation.hasSpecialCharacter()
     ] );
     this.confirmPassword = new FormControl( this.user.confirmPassword, [
       Validators.required
@@ -90,7 +98,6 @@ export class SignupComponent {
     this.user.email = this.email.value;
     this.user.password = this.password.value;
     this.user.confirmPassword = this.confirmPassword.value;
-
 
     this.devPrintUserData(this.user);
   }
