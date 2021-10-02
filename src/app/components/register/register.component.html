@@ -1,7 +1,7 @@
-<div>
+<div class="fullSizeForm">
   <h1>Test Driven Forms App</h1>
   <form #registerForm="ngForm" (ngSubmit)="checkRegister(registerForm)">
-    <div>
+    <div class="formField">
       <label for="name">Name: </label>
       <input 
         type="text"
@@ -30,7 +30,7 @@
         </div>
       </div>
     </div>
-    <div>
+    <div class="formField">
       <label for="surname1">First surname: </label>
       <input 
         type="text"
@@ -59,7 +59,7 @@
         </div>
       </div>
     </div>
-    <div>
+    <div class="formField">
       <label for="surname2">Second surname: </label>
       <input 
         type="text"
@@ -72,7 +72,7 @@
         maxlength="30"
       />
     </div>
-    <div>
+    <div class="formField">
       <label for="username">Username: </label>
       <input 
         type="text"
@@ -97,7 +97,7 @@
         </div>
       </div>
     </div>
-    <div>
+    <div class="formField">
       <label for="dateOfBirth">Date of birth: </label>
       <input 
         type="date"
@@ -117,7 +117,7 @@
         </div>
       </div>
     </div>
-    <div>
+    <div class="formField">
       <label for="email">Email: </label>
       <input 
         type="email"
@@ -134,7 +134,7 @@
         Incorrect mail format
       </span>
     </div>
-    <div>
+    <div class="formField">
       <label for="password">Password: </label>
       <input 
         type="password"
@@ -155,7 +155,7 @@
         </div>
       </div>
     </div>
-    <div>
+    <div class="formField">
       <label for="confirmPassword">Confirm password: </label>
       <input 
         type="password"
